@@ -9,21 +9,21 @@ def daily_reminder():
     # Process the Task Based on Priority and Time Sensitivity
     match priority:
         case 'high':
-            reminder_message = f"'{task}' is a high priority task"
+            reminder_message = f"Reminder: '{task}' is a high priority task"
             if time_bound == 'yes':
                 reminder_message += " that requires immediate attention today!"
             else:
                 reminder_message += ". You can complete it later."
                 
         case 'medium':
-            reminder_message = f"'{task}' is a medium priority task"
+            reminder_message = f"Reminder: '{task}' is a medium priority task"
             if time_bound == 'yes':
                 reminder_message += " that requires attention soon!"
             else:
                 reminder_message += ". Plan to do it when you can."
                 
         case 'low':
-            reminder_message = f"'{task}' is a low priority task"
+            reminder_message = f"Reminder: '{task}' is a low priority task"
             if time_bound == 'yes':
                 reminder_message += " but should be addressed today."
             else:
