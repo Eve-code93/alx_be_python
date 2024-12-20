@@ -1,5 +1,7 @@
 # daily_reminder.py
 
+# daily_reminder.py
+
 def daily_reminder():
     # Prompt for a Single Task
     task = input("Enter your task: ")
@@ -9,31 +11,25 @@ def daily_reminder():
     # Process the Task Based on Priority and Time Sensitivity
     match priority:
         case 'high':
-            reminder_message = f"Reminder: '{task}' is a high priority task"
             if time_bound == 'yes':
-                reminder_message += " that requires immediate attention today!"
+                print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
             else:
-                reminder_message += ". You can complete it later."
+                print(f"Reminder: '{task}' is a high priority task. You can complete it later.")
                 
         case 'medium':
-            reminder_message = f"Reminder: '{task}' is a medium priority task"
             if time_bound == 'yes':
-                reminder_message += " that requires attention soon!"
+                print(f"Reminder: '{task}' is a medium priority task that requires attention soon!")
             else:
-                reminder_message += ". Plan to do it when you can."
+                print(f"Reminder: '{task}' is a medium priority task. Plan to do it when you can.")
                 
         case 'low':
-            reminder_message = f"Reminder: '{task}' is a low priority task"
             if time_bound == 'yes':
-                reminder_message += " but should be addressed today."
+                print(f"Reminder: '{task}' is a low priority task but should be addressed today.")
             else:
-                reminder_message += ". Consider completing it when you have free time."
+                print(f"Reminder: '{task}' is a low priority task. Consider completing it when you have free time.")
                 
         case _:
-            reminder_message = "Invalid priority level entered."
-
-    # Provide a Customized Reminder
-    print(reminder_message)
+            print("Invalid priority level entered.")
 
 if __name__ == "__main__":
     daily_reminder()
