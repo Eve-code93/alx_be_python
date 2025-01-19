@@ -12,6 +12,30 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, 1), 0)
 
+    def test_subtraction(self):
+        """Test the subtraction method."""
+        self.assertEqual(self.calc.subtract(10, 5), 5)
+        self.assertEqual(self.calc.subtract(0, 5), -5)
+        self.assertEqual(self.calc.subtract(-5, -5), 0)
+        self.assertEqual(self.calc.subtract(3, 7), -4)
+
+    def test_multiplication(self):
+        """Test the multiplication method."""
+        self.assertEqual(self.calc.multiply(3, 4), 12)
+        self.assertEqual(self.calc.multiply(-3, 4), -12)
+        self.assertEqual(self.calc.multiply(0, 10), 0)
+        self.assertEqual(self.calc.multiply(-2, -3), 6)
+
+    def test_division(self):
+        """Test the division method."""
+        self.assertEqual(self.calc.divide(10, 2), 5)
+        self.assertEqual(self.calc.divide(5, 2), 2.5)
+        self.assertEqual(self.calc.divide(-10, 2), -5)
+        self.assertEqual(self.calc.divide(0, 5), 0)
+
+        # Edge case: Division by zero
+        self.assertIsNone(self.calc.divide(5, 0))
+
     def test_invalid_inputs(self):
         """Test invalid inputs for all methods."""
         with self.assertRaises(TypeError):
